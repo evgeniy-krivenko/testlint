@@ -1,0 +1,97 @@
+run:
+  tests: true
+  concurrency: 4
+  timeout: 5m
+  issues-exit-code: 1
+
+issues:
+  max-same-issues: 0
+  exclude-rules:
+    - linters:
+        - forbidigo
+      path: tools/.*
+
+linters-settings:
+  gci:
+    sections:
+      - standard
+      - default
+      - prefix(fastronom)
+    custom-order: true
+
+  godox:
+    keywords:
+      - FIXME
+      - TODO
+
+  lll:
+    line-length: 130
+
+  tagliatelle:
+    case:
+      rules:
+        json: snake
+        toml: snake
+
+  revive:
+    rules:
+      - name: blank-imports
+        disabled: true
+
+linters:
+  disable-all: true
+  enable:
+    - asasalint
+    - asciicheck
+    - bidichk
+    - durationcheck
+    - errcheck
+    - errchkjson
+    - errname
+    - execinquery
+    - exhaustive
+    - exportloopref
+    - forbidigo
+    - gci
+    - goconst
+    - gocritic
+    - gocyclo
+    - godot
+    - godox
+    - gofmt
+    - goheader
+    - goimports
+    - gomoddirectives
+    - gomodguard
+    - goprintffuncname
+    - gosec
+    - gosimple
+    - govet
+    - importas
+    - ineffassign
+    - lll
+    - makezero
+    - misspell
+    - musttag
+    - nakedret
+    - nestif
+    - nilnil
+    - nolintlint
+    - nosprintfhostport
+    - prealloc
+    - predeclared
+    - promlinter
+    - reassign
+    - revive
+    - staticcheck
+    - stylecheck
+    - tagliatelle
+    - tenv
+    - testableexamples
+    - testpackage
+    - thelper
+    - typecheck
+    - unconvert
+    - unused
+    - usestdlibvars
+    - whitespace
